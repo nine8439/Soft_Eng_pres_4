@@ -1,5 +1,4 @@
 #File for HW2
-<<<<<<< HEAD
 1
 2
 3
