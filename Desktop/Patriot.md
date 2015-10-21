@@ -39,6 +39,19 @@ Important: This creates the communications network for the system
     3. Guidance section – Consists of the auto-guidance systems and also the Track via guidance System (from ground control)
     4. Control actuator section – controls the fins of the missile for stability and steering
 
+<h2>Use and Disaster in the Gulf War</h2>
+
++ The Persian Gulf War was the first usage of the Patriot missile system to shoot down ballistic missiles as opposed to only aircraft.
+
++ It was used 40 times to shoot down missiles, primarily Scud or Al Hussein short range ballistic missiles.
+
++ The initial launch was actually a computer glitch
+
++ The worst failure was when an army barracks in Dhahran, Saudi Arabia was hit by a Scud missile and 28 people died.
+
++ On the night of the 25th of February, 1991, a Patriot missile system operating in Dhahran, Saudi Arabia, failed to track and intercept an incoming Scud. The Iraqi missile impacted into an army barracks, killing 28 U.S. soldiers and injuring another 98.
+
++ The cause of the missile system failing to defend against the incoming Scud was traced back to a bug in Patriot's radar and tracking software
 
 
 
