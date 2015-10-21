@@ -24,6 +24,14 @@
 
 Also Important: It is contained in a mobile shelter capable of withstanding  Electromagnetic Interference, chemical/biological attacks, and also acts as protection against the elements.
 
+3. OE-349 Antenna Mast Group, consists of mobile platform, and 4 antennas in two pairs with it's associated amplifiers and radios
+Important: This creates the communications network for the system
+
+4. M901 Launching Station: station where the missile is launched, self-contained.
+
+<h2>Patriot Missile Technology</h2>
+
+
 
 
 
