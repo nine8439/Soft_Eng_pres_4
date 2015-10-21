@@ -31,6 +31,19 @@ Important: This creates the communications network for the system
 
 <h2>Patriot Missile Technology</h2>
 
+1. MIM-104A – solely for anti-aircraft purpose
+
+2. MIM104C/D/E (PAC-2) - for anti-missile; intended to explode on engagement; consists of four sections
+    1. Propulsion section
+    2. Warhead section
+    3. Guidance section – Consists of the auto-guidance systems and also the Track via guidance System (from ground control)
+    4. Control actuator section – controls the fins of the missile for stability and steering
+
+
+
+
+
+
 
 
 
