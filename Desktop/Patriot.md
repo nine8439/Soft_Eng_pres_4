@@ -53,6 +53,21 @@ Important: This creates the communications network for the system
 
 + The cause of the missile system failing to defend against the incoming Scud was traced back to a bug in Patriot's radar and tracking software
 
+<h2>Overview of Disaster</h2>
+
++ Problem Statement: “System failed to identify a  enemy missile after the system had been running continuously for over 100 hours”
+
++ If we assume the Patriot Missile Systems was correctly working on the European War front prior to the Persian Gulf War, then these problems can be considered as requirements creep.
+
++ 4 areas where problems were encountered:
+    1. Domain/Environment Change
+    2. Software: clock drift/round-off error, reboot time, software delivery time, software upgrade time
+    3. Hardware: No recorder, difference in ballistic missiles versus Aircraft/Cruise Missiles
+    4. User Ware: no auditory alarms, information on Operation doctorine
+
+
+
+
 
 
 
