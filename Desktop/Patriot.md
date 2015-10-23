@@ -65,6 +65,21 @@ Important: This creates the communications network for the system
     3. Hardware: No recorder, difference in ballistic missiles versus Aircraft/Cruise Missiles
     4. User Ware: no auditory alarms, information on Operation doctorine
 
+<h2>Domain/Environment Change</h2>
+
++ Environmental Change: Changes were accounted for during the conflict. 
+
+> “As information from all sources became available, software changes were made from August 1990 to February 199 1 by the Patriot Project Office in Huntsville, Alabama, to adapt the system to the Desert Storm environment.”
+
+http://fas.org/spp/starwars/gao/im92026.htm
+
++ The major change needed was the reduction of the dependence of the system to its mobile characteristic. The Patriot system was originally designed to operate in Europe against Soviet medium- to high-altitude aircraft and cruise missiles…To avoid detection it was designed to be mobile and operate for only a few hours at one location. This is a significant requirements creep. 
+
+<h2>Software</h2>
+
++ 
+
+
 
 
 
