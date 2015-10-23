@@ -1,3 +1,4 @@
+<h1>Patriot Missile</h1>
 <h2>Patriot Missile System Background</h2>
 1. The MIM-104 Patriot is a surface-to-air missile (SAM) system, the primary of its kind used by the United States Army and several allied nations. It is manufactured by the U.S. defense contractor Raytheon and derives its name from the radar component of the weapon system.
 
@@ -114,6 +115,17 @@ http://fas.org/spp/starwars/gao/im92026.htm
 + There US Army ignored warnings from the Patriot Office, and found the Israeli use of the system atypical.
 
 > "When the Patriot Office told the Army, extended use can cause miscalculations, they ignored the memo and did not tell the field users because they thought the Patriot System was still being used as a mobile system"
+
+<h1>Vancouver Stock Exchange</h1>
+
++ Things were looking grim at the Vancouver Stock Exchange. Brokers and investors on the free-wheeling penny-stock market wondered where the North American bull market had gone, as the exchange index kept dropping. The index, which was established in January 1982 at a level of 1,000, in 1983 had been hitting lows in the 520 range.
+
++ The exchange had incorrectly calculated the index. The index was based on the selling price of all 1,400 or so stocks listed on the exchange. Every time a stock price changed, which happened 2,800 times on a average day, a computer recalculated the index to three decimal places. The mistake was made in calculating the last decimal place. If the index stood at, say, 540.32567, the computer simply dropped the last two digits, making it 540.325. Instead, it should have rounded off the last digit, making the index 540.326.
+
++ When the mistake was made a few thousand times a day, the index slipped by up to a point or two daily. Since the mistakes were cumulative, the distortion increased daily. 
+
++ When the error was identified, the index was updated to reflect the true value of the index, with the values included from the 
+truncation. Before the fix, the index was sitting at 524.811. On Monday, the index opened at 1098.892. 
 
 
 
