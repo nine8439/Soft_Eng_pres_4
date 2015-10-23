@@ -127,6 +127,42 @@ http://fas.org/spp/starwars/gao/im92026.htm
 + When the error was identified, the index was updated to reflect the true value of the index, with the values included from the 
 truncation. Before the fix, the index was sitting at 524.811. On Monday, the index opened at 1098.892. 
 
+<h1>Ariane 5</h1>
+
+<h2>Quick Background and Disaster</h2>
+
+    + Ariane 5 is a European heavy lift launch vehicle that is part of the Ariane rocket family, an expendable launch system used to deliver payloads into geostationary transfer orbit (GTO) or low Earth orbit (LEO). Ariane 5 rockets are manufactured under the authority of the European Space Agency (ESA) and the Centre National d'Etudes Spatiales.
+    
+    + On 4 June 1996, the maiden flight of the Ariane 5 launcher ended in a failure. Only about 40 seconds after initiation of the flight sequence, at an altitude of about 3700 m, the launcher veered off its flight path, broke up and exploded.
+
+<h2>Overview of failure</h2>
+
+    + The origin of the failure was thus rapidly narrowed down to the flight control system and more particularly to the Inertial Reference Systems, which obviously ceased to function almost simultaneously at around H0 + 36.7 seconds
+
+    + Events that caused the failure to occur:
+        1. The value of Horizontal Bias were much higher than expected because the early part of the trajectory of Ariane 5 differs from that of Ariane 4 and results in considerably higher horizontal velocity values
+        2. The Operand Error occurred due to an unexpected high value of an internal alignment function result called BH, Horizontal Bias, related to the horizontal velocity sensed by the platform. This value is calculated as an indicator for alignment precision over time.
+
+        3. The alignment function is operative for 50 seconds after starting of the Flight Mode of the SRIs which occurs at H0 - 3 seconds for Ariane 5. Consequently, when lift-off occurs, the function continues for approx. 40 seconds of flight. This time sequence is based on a requirement of Ariane 4 and is not required for Ariane 5.
+            
+            + Had this function been eliminated from the software of the Ariane 5, the disaster could have been averted
+
+            + The error occurred in a part of the software that only performs alignment of the strap-down inertial platform. This software module computes meaningful results only before lift-off. As soon as the launcher lifts off, this function serves no purpose.
+
+        4. The internal SRI software exception was caused during execution of a data conversion from 64-bit floating point to 16-bit signed integer value. The floating point number which was converted had a value greater than what could be represented by a 16-bit signed integer. This resulted in an Operand Error. The data conversion instructions (in Ada code) were not protected from causing an Operand Error, although other conversions of comparable variables in the same place in the code were protected.
+
+        5. The OBC could not switch to the back-up SRI 1 because that unit had already ceased to function during the previous data cycle (72 milliseconds period) for the same reason as SRI 2.
+
+        6. Ultimately, the launcher began to disintegrate, which led to the triggering of the self-destruct sequence. 
+
+
+<h2>Failure in Software</h2>
+
++ The design of the Ariane 5 SRI was practically the same as that of an SRI which is presently used on Ariane 4, particularly as regards the software.
+
++ Events that caused the 
+
+
 
 
 
