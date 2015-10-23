@@ -73,13 +73,27 @@ Important: This creates the communications network for the system
 
 http://fas.org/spp/starwars/gao/im92026.htm
 
++ The Patriot system was originally designed to operate in Europe against Soviet medium- to high-altitude aircraft and cruise missiles traveling at speeds up to about MACH 2 (1500 mph). To avoid detection it was designed to be mobile and operate for only a few hours at one location.
+
++ This was the first time the Patriot had been used to defend against Scud missiles, which fly at approximately MACH 5 (3750 mph), the Army had much to learn about tracking and intercepting them. To obtain Scud data, the Army relied on operational experience conveyed by Patriot users as well as other intelligence sources.
+
 + The major change needed was the reduction of the dependence of the system to its mobile characteristic. The Patriot system was originally designed to operate in Europe against Soviet medium- to high-altitude aircraft and cruise missiles…To avoid detection it was designed to be mobile and operate for only a few hours at one location. This is a significant requirements creep. 
 
 <h2>Software</h2>
 
-+ 
++ The algorithm used to calculate the path of the Scud Missile was called the Range-Gate Algorithm.
 
++ However since it was only 24bit machine, there was a loss in precision as the time increased or the velocity has significantly higher.
 
++ The System had been on for over 100 hours and therefore the Range-Gate algorithm was significantly off and no missile was detected in the Dhahran attack.
+
+> "The range gate's prediction of where the Scud will next appear is a function of the Scud's know velocity and the time of the last radar detection. Velocity is a real number that can be expressed as a whole number and a decimal (e.g., 3750.2563...miles per hour). Time is kept continuously by the system's internal clock in tenths of seconds but is expressed as an integer or whole number (e.g., 32, 33, 34...). The longer the system has been running, the larger the number representing time. To predict where the Scud will next appear, both time and velocity must be expressed as real numbers. Because of the way the Patriot computer performs its calculations and the fact that its registers(4) are only 24 bits long, the conversion of time from an integer to a real number cannot be any more precise than 24"
+
+http://fas.org/spp/starwars/gao/im92026.htm
+
++ Reboot time to reset the clock wasn't a risk many military weren't willing to take. At the beginning of the War, only about a two minute window to actually detect and track the missile.  A reboot took 1.5 to 2 minutes, therefore a chance to miss an incoming missile.
+
++ To upgrade the software, it would require the system to be down for 1-2 hours, as mentioned above, commanders at the front line found this to be a difficult risk to take. 
 
 
 
