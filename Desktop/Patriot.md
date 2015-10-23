@@ -95,6 +95,29 @@ http://fas.org/spp/starwars/gao/im92026.htm
 
 + To upgrade the software, it would require the system to be down for 1-2 hours, as mentioned above, commanders at the front line found this to be a difficult risk to take. 
 
+<h2>Hardware</h2> 
+
++ The Patriot was not equipped with an embedded (internal) data recorder to retain system performance information. Although portable, external data recorders were available, U.S. commanders decided not to use them because they believed the recorders could cause an unanticipated system shutdown. However, Israeli commanders used data recorders on the Patriot systems they controlled and provided this data to the U.S. Army.
+
++ Because the Israelis were using the data recorder, they were able to identify the problem quicker than U.S. forces
+
+> On February 11, 1991, the Patriot Project Office received Israeli data identifying a 20 percent shift in the Patriot system's radar range gate after the system had been running for 8 consecutive hours. This shift is significant because it meant that the target (in this case, the Scud) was no longer in the center of the range gate. The target needs to be in the center ofthe range gate to ensure the highest probability of tracking the target. As previously mentioned, the range gate is calculated by an algorithm that determines if the detected target is a Scud, and if the Scud is in the Patriot's firing range. If these conditions are met, the Patriot fires its missiles...
+
+> Patriot Project Office officials said that the Patriot system will not track a Scud when there is a range gate shift of 50 percent or more. Because the shift is directly proportional to time, extrapolating the Israeli data (which indicated a 20 percent shift after 8 hours) determined that the range gate would shift 50 percent after about 20 hours of continuous use. Specifically, after about 20 hours, the inaccurate time calculation becomes sufficiently large to cause the radar to look in the wrong place for the target. Consequently, the system fails to track and intercept the Scud.
+
+http://fas.org/spp/starwars/gao/im92026.htm
+
+<h2>User</h2>
+
++ Operation Doctrine not explained to operators, they were unaware that the system was intended to target medium to high altitude missiles and be mobile and operate for a few hours. 
+
++ There US Army ignored warnings from the Patriot Office, and found the Israeli use of the system atypical.
+
+> "When the Patriot Office told the Army, extended use can cause miscalculations, they ignored the memo and did not tell the field users because they thought the Patriot System was still being used as a mobile system"
+
+
+
+
 
 
 
