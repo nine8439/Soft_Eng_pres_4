@@ -84,7 +84,7 @@ http://fas.org/spp/starwars/gao/im92026.htm
 
 + The algorithm used to calculate the path of the Scud Missile was called the Range-Gate Algorithm.
 
-+ However since it was only 24bit machine, there was a loss in precision as the time increased or the velocity has significantly higher.
++ However since it was only 24bit machine, there was a loss in precision as the time increased or the velocity was significantly higher.
 
 + The System had been on for over 100 hours and therefore the Range-Gate algorithm was significantly off and no missile was detected in the Dhahran attack.
 
@@ -118,7 +118,7 @@ http://fas.org/spp/starwars/gao/im92026.htm
 
 <h1>Vancouver Stock Exchange</h1>
 
-+ Things were looking grim at the Vancouver Stock Exchange. Brokers and investors on the free-wheeling penny-stock market wondered where the North American bull market had gone, as the exchange index kept dropping. The index, which was established in January 1982 at a level of 1,000, in 1983 had been hitting lows in the 520 range.
++ Things were looking grim at the Vancouver Stock Exchange. The index, which was established in January 1982 at a level of 1,000, in 1983 had been hitting lows in the 520 range. This all happened, while there was no major economic downturn occuring. 
 
 + The exchange had incorrectly calculated the index. The index was based on the selling price of all 1,400 or so stocks listed on the exchange. Every time a stock price changed, which happened 2,800 times on a average day, a computer recalculated the index to three decimal places. The mistake was made in calculating the last decimal place. If the index stood at, say, 540.32567, the computer simply dropped the last two digits, making it 540.325. Instead, it should have rounded off the last digit, making the index 540.326.
 
