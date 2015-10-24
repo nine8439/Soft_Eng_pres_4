@@ -170,7 +170,24 @@ truncation. Before the fix, the index was sitting at 524.811. On Monday, the ind
 
 + Although the failure was due to a systematic software design error, mechanisms could be introduced to mitigate this type of problem. For example the computers within the SRIs could have continued to provide their best estimates of the required attitude information. There is reason for concern that a software exception should be allowed, or even required, to cause a processor to halt while handling mission-critical equipment. Indeed, the loss of a proper software function was hazardous because the same software runs in both SRI units. In the case of Ariane 501, this resulted in the switch-off of two still healthy critical units of equipment.
 
-+ 
+<h2>Testing and Shortcomings</h2>
+
++ No test was performed to verify that the SRI would behave correctly when being subjected to the count-down and flight time sequence and the trajectory of Ariane 5. It is possible to do ground testing by injecting simulated accelerometric signals in accordance with predicted flight parameters, while also using a turntable to simulate launcher angular movements. Had such a test been performed by the supplier or as part of the acceptance test, the failure mechanism would have been exposed.
+
++ A large number of closed-loop simulations of the complete flight simulating ground segment operation, telemetry flow and launcher dynamics were run in order to verify :
+
+        1. the nominal trajectory 
+        2. trajectories degraded with respect to internal launcher parameters
+        3. trajectories degraded with respect to atmospheric parameters 
+        4. equipment failures and the subsequent failure isolation and recovery
+
+            + In these tests many equipment items were physically present and exercised but not the two SRIs, which were simulated by specifically developed software modules. Some open-loop tests, to verify compliance of the On-Board Computer and the SRI, were performed with the actual SRI. It is understood that these were just electrical integration tests and "low-level " (bus communication) compliance tests.
+
+<h2>Summary of Failure</h2>
+
+The failure of the Ariane 501 was caused by the complete loss of guidance and attitude information 37 seconds after start of the main engine ignition sequence (30 seconds after lift- off). This loss of information was due to specification and design errors in the software of the inertial reference system.
+
+The extensive reviews and tests carried out during the Ariane 5 Development Programme did not include adequate analysis and testing of the inertial reference system or of the complete flight control system, which could have detected the potential failure.
 
 
 
