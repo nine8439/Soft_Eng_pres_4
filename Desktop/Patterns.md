@@ -8,6 +8,8 @@
 
 #Abstract Session
 
+##Motivation
+
     + Allows objects to maintain per-client state with full type safety and no loss of efficiency
     + Also known as: Service Access Point, Context, Service Handler
     + Object interactions are defined in terms of abstract interface, which increase reusability and extensibility of the framework because the set of client and server types that can be used together is not bounded and can easily be extended by framework users. 
@@ -24,4 +26,9 @@
     + Two methods to map from identifiers to the data structures used internally to store per-client state:
         1. Untyped Pointers: Identifiers are defined to be untyped pointers that the server object initializes to point to an implementation-specific data structure and casts to the appropriate type on each invocation. 
         2. Handles: Identifiers are defined to be values of simple types, such as integers, or opaque values. The server uses a private associative container to map between identifiers and implementation-specific data structures and must perform a lookup each time a client makes a request.
+
+    + Choosing between untyped pointers or handles is one of safety versus run-time efficiency. Untyped pointers are efficient, but passing an incorrect pointer to a server could cause the program to corrupt memory or crash.
+    + Using handles as indices to an associative container allows incorrect identifiers to be detected at run-time but at the expense of performing a lookup on each invocation, which can be costly if many invocations are made during a time-critical part of a program.
+    + Both approaches can be unsafe: a client can pass an incorrect identifier to the server without the errors being caught at compile time.
+    
 
