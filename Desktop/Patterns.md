@@ -30,5 +30,16 @@
     + Choosing between untyped pointers or handles is one of safety versus run-time efficiency. Untyped pointers are efficient, but passing an incorrect pointer to a server could cause the program to corrupt memory or crash.
     + Using handles as indices to an associative container allows incorrect identifiers to be detected at run-time but at the expense of performing a lookup on each invocation, which can be costly if many invocations are made during a time-critical part of a program.
     + Both approaches can be unsafe: a client can pass an incorrect identifier to the server without the errors being caught at compile time.
+
+##Implementation 
+
+    + A protocol service object, rather than providing a client with a handle to be passed as an argument to the operations of its abstract interface, instead creates an intermediate session object and returns a pointer to the session object to the client. 
+
+    + The session object encapsulates the state information for the client that owns the session 
+
+    + Use Abstract Session pattern:
+        1. Interactions between server objects and client objects are defined in terms of abstract interfaces. 
+
+        2. Server objects must maintain state for each client object that makes use of their services. 
     
 
