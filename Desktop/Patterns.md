@@ -53,5 +53,14 @@
     + ClientN (HttpHandler, TalnetClient). Objects that are making use of ServiceX through the AbstractSession interface.
 
 
+##Collaborations
+
+    + A Client object that wants to use a server object request a session from the server. The server object creates a session object (which conforms to the AbstractSession interface), initializes the session with information about the client, and returns a pointer to the session back to the client.
+
+    + The client uses the service provided by the server object by invoking the operations of its session object's Abstract Session interface. The session object cooperates with the server object to complete the invocation.
+
+    + The server object uses information stored in the session object to process requests from its clients and can update the per-client information when events occur behind the scenes that relate to the client.
+
+    + When a client object has finished using the service provided by the server object, it call the <i>release</i> operation of its session. Forcing clients to release sessions by calling <i>release</i> allows a service to hide the way it allocates session objects from its clients. A service could allocate sessions on the heap, in which case the <i>release</i> operation would free the session object, or a service could have a fixed number of sessions in an array, in which case <i>release</i> would update a record in the service object of the sessions that were unused and could be handed out to new clients.
     
 
