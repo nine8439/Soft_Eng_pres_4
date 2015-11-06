@@ -41,5 +41,17 @@
         1. Interactions between server objects and client objects are defined in terms of abstract interfaces. 
 
         2. Server objects must maintain state for each client object that makes use of their services. 
+
+##Structure and Participants
+
+    + ServiceX: Classes of server objects that create session objects for clients that are bound to them
+
+    + Abstract Session (Channel Session). The interface through which clients bound to a server object make use of the service provided by that object.
+
+    + ServiceX::Session (TCPSession). The session classes used by the ServiceX classes to store information about clients that are bound to them. Clients invoke the Abstract Session interfaces of these objects to interact with the server objects to which they are bound. 
+
+    + ClientN (HttpHandler, TalnetClient). Objects that are making use of ServiceX through the AbstractSession interface.
+
+
     
 
