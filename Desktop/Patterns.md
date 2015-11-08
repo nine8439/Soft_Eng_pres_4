@@ -62,5 +62,17 @@
     + The server object uses information stored in the session object to process requests from its clients and can update the per-client information when events occur behind the scenes that relate to the client.
 
     + When a client object has finished using the service provided by the server object, it call the <i>release</i> operation of its session. Forcing clients to release sessions by calling <i>release</i> allows a service to hide the way it allocates session objects from its clients. A service could allocate sessions on the heap, in which case the <i>release</i> operation would free the session object, or a service could have a fixed number of sessions in an array, in which case <i>release</i> would update a record in the service object of the sessions that were unused and could be handed out to new clients.
+
+##Advantages of Abstract Session Pattern
+
+    + Type Safety: Interactions between clients and sessions and between sessions and servers are completely type-safe. This reduces the likelihood of obscure errors, making the code easier to debug and maintain.
+    
+    + Performance: The interactions between clients and sessions are as fast or faster than those using unsafe methods such as untyped pointer or handles.
+
+    + Flexibility: The use of abstract interfaces and encapsulation of per client state within each server class reduces coupling between client and server classes. A client can use any server that creates sessions that implement the AbstractSession interface. 
+
+    + Extensibility: The pattern makes it easy to add server classes to the system; such extensions do not require existing client and server classes to change.
+
+    
     
 
