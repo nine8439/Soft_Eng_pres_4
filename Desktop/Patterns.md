@@ -82,3 +82,24 @@
     + Multiple Languages. It is difficult to call Abstract Sessions from another language, especially from languages that are not object-oriented. This can be solved by writing an adapter layer that hides session objects behind a set of procedures callable from the other languages and that uses one of the unsafe implementations of the Session pattern to identify session objects.
     
 
+##Different forms of implementation
+
+    + Use of the heap. Allocating and deallocating memory from the heap is an expensive operation. Forcing clients to discard sessions via the <i>release</i> method in the AbstractSession interface, rather than an explicit deallocation of the session object, gives server objects more flexibility in the allocation of session objecs. For instance, if the server allocated the session from the heap, the <i>release</i> operation would delete the session object. However, a server might preallocate sessions in a cache; when a client invokes the <i>release</i> operation of a session, it need only mark that the session is unused rather than perform a heap deallocation. If a server object does not need to store any information about its clients, it can implement the AbstractSession interface itself, perhaps using private inheritance, in this case, the <i>release</i> operation would do nothing.
+
+    + Object finalization. In a language with automatic garbage collection and object finalization, the act of releasing a session can be made synonymous with releasing the last reference to the Session object. The functionality of releasing a session can be performed by the finalization method of the Session object and so will be called automatically by the garbage collector.
+
+    + Java outer/inner classes. A Java implementation of this pattern can be simplified using inner classes. The concrete Service class would be implemented as an outer class, and the concrete Session classes would be defined as inner classes. An inner class is associated with an instance of the outer class in which it is defined and can refer directly to the fields and methods of that instance. Thus, inner classes remove the need for explicit delegation from session to service and reduce the possibility of programming errors. 
+
+    +   Defining server interfaces. If clients are always bound to servers by some third party that knows the complete type of all servers it is using, then server objects do not need to conform to an abstract interface. However, in some systems clients will bind themselves to servers by finding a suitable server object in something like a trader or namespace and then request a session from it, in this case servers will need to conform to some abstract interface that can be used polymorphically. 
+
+##Known Uses 
+
+    + Abstract Session patter is widely used in the implementation of object-oriented communication protocol software. The x-kernel framework and the ACE communications toolkit both use this pattern.
+
+    + Microsoft's Object Linking and Embedding framework
+        1. Manage the size and location of embedded objects. 
+        2. An object such as word-processing document that can contain embedded objects is known as a "container" and stores pointers to the IOleObject interfaces of its embedded objects. Through this interface the container can, among other things, query the required size of the embedded object and set the size and position of the object. 
+        3. When a new IOleObject is embedded in the container, the container creates a Session object, know as a client-site, in which it stores information about the actual position and size of the embedded object.
+        4. The client-site object implements the IOleClientSite interface that the container passes to the embedded object and through which the embedded object can request to be resized.
+        5. When an embedded object makes a resize request through its IOleClientSite interface, the container updates the size and position of all its embedded objects base on the information stored in the client-site session object.
+
