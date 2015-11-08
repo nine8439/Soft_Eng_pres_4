@@ -73,6 +73,12 @@
 
     + Extensibility: The pattern makes it easy to add server classes to the system; such extensions do not require existing client and server classes to change.
 
-    
+##Disadvantages of Abstract Session Pattern
+
+    + Dangling Pointers. It is possible that a session referenced and used after it has been released.
+
+    + Distribution. It is difficult to pass a session object from the server to the client if the client and server exist in different address spaces. When creating a session, the server must send information to the client to allow the client to create a proxy session in its local address space. 
+
+    + Multiple Languages. It is difficult to call Abstract Sessions from another language, especially from languages that are not object-oriented. This can be solved by writing an adapter layer that hides session objects behind a set of procedures callable from the other languages and that uses one of the unsafe implementations of the Session pattern to identify session objects.
     
 
