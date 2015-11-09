@@ -103,3 +103,16 @@
         4. The client-site object implements the IOleClientSite interface that the container passes to the embedded object and through which the embedded object can request to be resized.
         5. When an embedded object makes a resize request through its IOleClientSite interface, the container updates the size and position of all its embedded objects base on the information stored in the client-site session object.
 
+    + Java Abstract Windowing Toolkit (AWT)
+        1. An example of where the Abstract Session pattern is used is the <i>Graphics</i> interface. 
+        2. This interface provides a common interface for drawing graphics on a variety of devices, such as windows, bitmaps and printers.
+        3. An object that wants to draw onto a device asks the device to create a graphics context object and receives a reference to the object's <i>Graphics</i> interface. 
+        4. The graphics context stores the current drawing state, such as the current font, background and foreground colors, and other states required to render drawing operations onto the associated device. 
+
+    + Related Patterns
+        + Related to the Facade, Factory Method, and Mediator patterns
+            1. The Facade pattern uses a single intermediate object to hide the complexities of a framework of cooperating objects from the users of that framework. In contrast, the Session pattern uses multiple intermediate objects to decouple objects that provide a service from the objects that use that service and to provide type-safe interaction between objects that interact only through abstract interfaces. 
+
+            2. The Server object uses the Factory Method to create sessions for a client. This ensures that sessions can be initialized correctly by the server object.
+            3. A Mediator object controls the interaction of multiple cooperating objects. The Server object of the Abstract Session pattern can be viewed as a form of Mediator controlling the interaction of all of its clients. The session objects can be viewed as simple Mediators controlling the interaction of the server and a single client. 
+
