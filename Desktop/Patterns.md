@@ -167,6 +167,70 @@
 
     + It is important to examine the relationship between business objects. Some relationships between business objects are transient, which means that the relationship is applicable to only that interaction or scenario. Other relationships may be more permanent. Transient relationships are best modeled as workflow in a facade, where the facade manages the relationships between the business objects. Permanent relationships between two business objects should be studied to determine which business object (if not both objects) maintains the relationship.
 
+    ## Participants
+
+    <h3>Client</h3>
+        + This represents the client of the Session Facade, which needs access to the business service. This client can be another session bean (Session Facade) in the same business tier or a business delegate in another tier.
+
+    <h3>SessionFacade</h3>
+        + The SessionFacade is implemented as a session bean. The SessionFacade manages the relationships between numerous BusinessObjects and provides a higher level abstraction to the client. The SessionFacade offers coarse-grained access to the participating BusinessObject represented by the Invoke invocation to the session bean.
+
+    <h3>BusinessObject</h3>
+        + The BusinessObject is a role object that facilitates applying different strategies, such as session beans entity beans. A BusinessObject provides data and/or some service in the class diagram. The SessionFacade interacts with multiple BusinessObject instances to provide the service.
+
+    <h3>Strategies</h3>
+        + The Session Facade is a business-tier controller object that controls the interactions between the client and the participant business data and business service objects. In a complex application, there may be numerous Session Facades that can intermediate between the client and these objects. You can identify where a Session Facade might be useful by studying the client requirements and interactions typically documented in use cases and scenarios. This analysis enables you to identify a controller layer-composed of Session Facades-that can act as facades for these scenarios.
+
+    ## Implementation Strategies
+
+    <h3>Stateless Session Facade Strategy</h3>
+
++ When implementing the Session Facade, you must first decide whether the facade session bean is a stateful or a stateless session bean. Base this decision on the business process that the Session Facade is modeling.
+
+A business process that needs only one method call to complete the service is a nonconversational business process. Such processes are suitably implemented using a stateless session bean.
+
+A careful study of the use cases and scenarios enables you to determine the Session Facade definitions. If the use case is nonconversational, then the client initiates the use case, using a single method in the Session Facade. When the method completes, the use case completes too. There is no need to save the conversational state between one method invocation and the next. In this scenario, the Session Facade can be implemented as a stateless session bean.
+
+Stateful Session Facade Strategy
+A business process that needs multiple method calls to complete the service is a conversational business process. The conversational state must be saved between each client method invocation. In this scenario, a stateful session bean may be a more suitable approach for implementing the Session Facade.
+
+In both the Stateless Session Facade and the Stateful Session Facade strategies, the business object's role can be fulfilled in different ways, as explained next.
+
+Business Objects Strategies
+You can implement a business object as a session bean, entity bean, DAO, or regular Java object. The following strategies discuss each of these choices.
+
+Session Bean Strategy
+The business object can be implemented as a session bean. The session bean typically provides a business service and, in some cases, it may also provide business data. When such a session bean needs access to data, it may use a DAO to manipulate the data. The Session Facade can wrap one or more such service-oriented or data-oriented session beans acting as business objects.
+
+Entity Bean Strategy
+Representing the business object by an entity bean is the most common use of the Session Facade. When multiple entity beans participate in the use case, it is not necessary to expose all the entity beans to the clients. Instead, the Session Facade can wrap these entity beans and provide a coarse-grained method to perform the required business function, thus hiding the complexity of entity bean interactions.
+
+Data Access Object Strategy
+The Session Facade can directly use one or more DAOs to represent the business data. This is done when the application is so simple that it requires no entity beans, or when the application's architecture is based only on session beans and does not use entity beans. Using DAOs inside session beans partially simulates the persistent nature of entity beans.
+
+The application might need the services provided by an arbitrary Java object (that is, an object that is not an enterprise bean or a DAO, though a DAO can be viewed as a type of arbitrary Java object). In such cases, the Session Facade accesses this arbitrary Java object to provide the necessary functionality.
+
+Consequences
+Introduces Business-Tier Controller Layer 
+Session Facades can represent a control layer between clients and the business tier, as identified through analysis modeling. A Session Facade encompasses the interactions between the client and the business components. In a sophisticated application, you can identify numerous Session Facades that can intermediate between the client and the participating business-tier objects. For simpler applications, one might feel that a Session Facade is not adding much value, as it may act to mostly proxy the client requests to a single business component. However, as applications grow more complex over time, using a Session Facade up front will yield benefit at a later stage.
+Exposes Uniform Interface 
+The underlying interactions between the business components can be very complex. A Session Facade pattern abstracts this complexity and presents the client a simpler interface that is easy to understand and to use. By applying a Session Facade, you can design a service layer that exposes simpler interfaces to the system as a whole. Thus a facade provides a uniform coarse-grained access layer to all types of clients and can protect and hide the underlying participant business components.
+Reduces Coupling, Increases Manageability 
+Using a Session Facade decouples the business objects from the clients, thus reducing tight coupling and the client's dependency on the business objects. It is best to use a Session Facade to manage workflow among business objects, rather than making the business objects aware of each other. A business object should only be responsible for its own (data and logic) management. Inter-business object interactions can be abstracted into a workflow in a facade. This provides better manageability, centralization of interactions (responsibility and workflow), greater flexibility, and greater ability to cope with changes.
+
+Separating workflow into a Session Facade eliminates the direct dependency of the client on the participant objects and promotes design flexibility. Although changes to participants may require changes in the Session Facade, centralizing the workflow in the facade makes such changes more manageable. You change only the Session Facade rather than having to change all the clients. Client code is also simpler because it now delegates the workflow responsibility to the Session Facade. The client no longer manages the complex workflow interactions between business objects, nor is the client aware of interdependencies between business objects.
+
+Improves Performance, Reduces Fine-Grained Methods 
+The Session Facade also impacts performance. The Session Facade reduces network overhead between the client and the server because its use eliminates the direct interaction between the client and the business data and business service objects. Instead, all interactions are routed via the Session Facade in a coarse-grained manner. The Session Facade and its participants are closer to each other, making it more efficient for the facade to manage interactions between the participant objects. All data transfer and method invocations from the facade to the participants are presumably on a relatively high-speed network. The network performance can be further tuned to provide maximum throughput by applying the Transfer Object pattern for the participant objects where applicable.
+Provides Coarse-Grained Access 
+A Session Facade is meant to be a highly coarse-grained abstraction of the workflow. Thus, it is not desirable to have one Session Facade per entity bean interaction, which would represent a fine-grained abstraction rather than a coarse-grained one. Analyze the interaction between the client and the application services, using use cases and scenarios to determine the coarseness of the facade. Determine the optimal granularity of the Session Facade for the application by partitioning the application into logical subsystems and providing a Session Facade for each subsystem. However, providing a single facade for the entire system can result in a very large Session Facade whose numerous methods make it inefficient. A single facade may be sufficient for very simple applications that do not warrant subsystems.
+Centralizes Security Management 
+Security policies for the application can be managed at the Session Facade level, since this is the tier presented to the clients. Because of the Session Facade's coarse-grained access, it is easier and more manageable to define security policies at this level rather than at the participating business component level. Business components offer fine-grained control points. It is easier to manage security for Session Facades that provide coarse-grained access, because there are relatively fewer coarse-grained methods to be securely managed.
+Centralizes Transaction Control 
+Because the Session Facade represents the workflow for the use cases, it is more logical to apply transaction management at the Session Facade level. Centralized transaction control has advantages similar to centralized security. The facade offers a central place for managing and defining transaction control in a coarse-grained fashion. It is much more work to do transaction management individually on participant business components, especially since they are more fine-grained than the facade. Also, not using a Session Facade, but rather having the client access the enterprise beans directly, puts the transaction demarcation burden on the client and can produce unwanted results.
+Exposes Fewer Remote Interfaces to Clients 
+Clients that interact directly with the business data and business service objects cause an increase in chattiness between the client and the server. Increased chattiness may degrade network performance. All access to the business object must be via the higher level of abstraction represented by a facade. Since the facade presents a coarse-grained access mechanism to the business components, this reduces the number of business components that are exposed to the client. Thereby, the scope for application performance degradation is reduced due to the limited number of interactions between the clients and the Session Facade when compared to direct interaction by the client to the individual business components.
+
 
 
 
