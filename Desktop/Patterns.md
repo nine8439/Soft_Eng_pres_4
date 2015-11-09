@@ -116,3 +116,32 @@
             2. The Server object uses the Factory Method to create sessions for a client. This ensures that sessions can be initialized correctly by the server object.
             3. A Mediator object controls the interaction of multiple cooperating objects. The Server object of the Abstract Session pattern can be viewed as a form of Mediator controlling the interaction of all of its clients. The session objects can be viewed as simple Mediators controlling the interaction of the server and a single client. 
 
+#Session Facade Pattern
+
+    ##Motivation
+        + Enterprise beans encapsulate business logic and business data and expose their interfaces, and thus the complexity of the distributed services, to the client tier.
+
+    ##Problem 
+        + In a multitiered Java 2 Platform, Enterprise Edition (J2EE) application environment, the following problems arise:
+            1. Tight coupling, which leads to direct dependence between clients and business objects
+            2. Too many method invocations between client and server, leading to network performance problems
+            3. Lack of a uniform client access strategy, exposing business objects to misuse.
+
+        + A multitiered J2EE application has numerous server-side objects that are implemented as enterprise beans. In addition, some other arbitrary objects may provide services, data, or both. These objects are collectively referred to as business objects, since they encapsulate business data and business logic.
+
+        + J2EE applications implement business objects that provide processing services as session beans. Coarse-grained business objects that represent an object view of persistent storage and are shared by multiple users are usually implemented as entity beans.
+
+        + Application clients need access to business objects to fulfill their responsibilities and to meet user requirements. Clients can directly interact with these business objects because they expose their interfaces. When you expose business objects to the client, the client must understand and be responsible for the business data object relationships, and must be able to handle business process flow.
+
+        + However, direct interaction between the client and the business objects leads to tight coupling between the two, and such tight coupling makes the client directly dependent on the implementation of the business objects. Direct dependence means that the client must represent and implement the complex interactions regarding business object lookups and creations, and must manage the relationships between the participating business objects as well as understand the responsibility of transaction demarcation.
+
+        + As client requirements increase, the complexity of interaction between various business objects increases. The client grows larger and more complex to fulfill these requirements. The client becomes very susceptible to changes in the business object layer; in addition, the client is unnecessarily exposed to the underlying complexity of the system.
+
+        + Tight coupling between objects also results when objects manage their relationship within themselves. Often, it is not clear where the relationship is managed. This leads to complex relationships between business objects and rigidity in the application. Such lack of flexibility makes the application less manageable when changes are required.
+
+        + When accessing the enterprise beans, clients interact with remote objects. Network performance problems may result if the client directly interacts with all the participating business objects. When invoking enterprise beans, every client invocation is potentially a remote method call. Each access to the business object is relatively fine-grained. As the number of participants increases in a scenario, the number of such remote method calls increases. As the number of remote method calls increases, the chattiness between the client and the server-side business objects increases. This may result in network performance degradation for the application, because the high volume of remote method calls increases the amount of interaction across the network layer.
+
+        + A problem also arises when a client interacts directly with the business objects. Since the business objects are directly exposed to the clients, there is no unified strategy for accessing the business objects. Without such a uniform client access strategy, the business objects are exposed to clients and may reduce consistent usage.
+
+    
+
