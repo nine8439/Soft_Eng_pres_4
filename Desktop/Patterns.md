@@ -116,7 +116,7 @@
             2. The Server object uses the Factory Method to create sessions for a client. This ensures that sessions can be initialized correctly by the server object.
             3. A Mediator object controls the interaction of multiple cooperating objects. The Server object of the Abstract Session pattern can be viewed as a form of Mediator controlling the interaction of all of its clients. The session objects can be viewed as simple Mediators controlling the interaction of the server and a single client. 
 
-#Session Facade Pattern
+<h1>Session Facade Pattern</h1>
 
     <h2>Motivation</h2>
         + Enterprise beans encapsulate business logic and business data and expose their interfaces, and thus the complexity of the distributed services, to the client tier.
