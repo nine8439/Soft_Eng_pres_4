@@ -173,7 +173,7 @@
 
 ##Participants
 
-    <b>Client</b>
+    <b>Client<\b>
         + This represents the client of the Session Facade, which needs access to the business service. This client can be another session bean (Session Facade) in the same business tier or a business delegate in another tier.
 
     <b>SessionFacade</b>
@@ -185,7 +185,7 @@
     <b>Strategies</b>
         + The Session Facade is a business-tier controller object that controls the interactions between the client and the participant business data and business service objects. In a complex application, there may be numerous Session Facades that can intermediate between the client and these objects. You can identify where a Session Facade might be useful by studying the client requirements and interactions typically documented in use cases and scenarios. This analysis enables you to identify a controller layer-composed of Session Facades-that can act as facades for these scenarios.
 
-    ## Implementation Strategies
+##Implementation Strategies
 
     <h3>Stateless Session Facade Strategy</h3>
 
