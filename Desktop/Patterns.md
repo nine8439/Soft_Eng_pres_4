@@ -42,7 +42,8 @@
 
         2. Server objects must maintain state for each client object that makes use of their services. 
 
-##Structure and Participants
+##Structure and Participants 
+(See first_use.png file in repo)
 
     + ServiceX: Classes of server objects that create session objects for clients that are bound to them
 
@@ -54,6 +55,7 @@
 
 
 ##Collaborations
+(See first_seq.png file in repo)
 
     + A Client object that wants to use a server object request a session from the server. The server object creates a session object (which conforms to the AbstractSession interface), initializes the session with information about the client, and returns a pointer to the session back to the client.
 
@@ -172,6 +174,7 @@
     + It is important to examine the relationship between business objects. Some relationships between business objects are transient, which means that the relationship is applicable to only that interaction or scenario. Other relationships may be more permanent. Transient relationships are best modeled as workflow in a facade, where the facade manages the relationships between the business objects. Permanent relationships between two business objects should be studied to determine which business object (if not both objects) maintains the relationship.
 
 ##Participants
+(See Second_use.png and Second_seq.png in repo)
 
     1. Client
         + This represents the client of the Session Facade, which needs access to the business service. This client can be another session bean (Session Facade) in the same business tier or a business delegate in another tier.
