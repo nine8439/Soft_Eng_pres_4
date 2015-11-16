@@ -159,7 +159,7 @@
 
     5. Avoid exposing the underlying business objects directly to the client to keep tight coupling between the two tiers to a minimum.
 
-    ## Solution
+##Solution
 
     + Use a session bean as a facade to encapsulate the complexity of interactions between the business objects participating in a workflow. The Session Facade manages the business objects, and provides a uniform coarse-grained service access layer to clients.
 
