@@ -118,10 +118,10 @@
 
 #Session Facade Pattern
 
-    ##Motivation
+    <h2>Motivation</h2>
         + Enterprise beans encapsulate business logic and business data and expose their interfaces, and thus the complexity of the distributed services, to the client tier.
 
-    ##Problem 
+    <h2>Problem</h2> 
         + In a multitiered Java 2 Platform, Enterprise Edition (J2EE) application environment, the following problems arise:
             1. Tight coupling, which leads to direct dependence between clients and business objects
             2. Too many method invocations between client and server, leading to network performance problems
