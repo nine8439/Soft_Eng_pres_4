@@ -61,7 +61,8 @@
 
     + The server object uses information stored in the session object to process requests from its clients and can update the per-client information when events occur behind the scenes that relate to the client.
 
-    + When a client object has finished using the service provided by the server object, it call the <i>release</i> operation of its session. Forcing clients to release sessions by calling <i>release</i> allows a service to hide the way it allocates session objects from its clients. A service could allocate sessions on the heap, in which case the <i>release</i> operation would free the session object, or a service could have a fixed number of sessions in an array, in which case <i>release</i> would update a record in the service object of the sessions that were unused and could be handed out to new clients.
+    + When a client object has finished using the service provided by the server object, it call the <i>release</i> operation of its session. Forcing clients to release sessions by calling <i>release</i> allows a service to hide the way it allocates session objects from its clients. 
+    + A service could allocate sessions on the heap, in which case the <i>release</i> operation would free the session object, or a service could have a fixed number of sessions in an array, in which case <i>release</i> would update a record in the service object of the sessions that were unused and could be handed out to new clients.
 
 ##Advantages of Abstract Session Pattern
 
@@ -84,7 +85,9 @@
 
 ##Different forms of implementation
 
-    + Use of the heap. Allocating and deallocating memory from the heap is an expensive operation. Forcing clients to discard sessions via the <i>release</i> method in the AbstractSession interface, rather than an explicit deallocation of the session object, gives server objects more flexibility in the allocation of session objecs. For instance, if the server allocated the session from the heap, the <i>release</i> operation would delete the session object. However, a server might preallocate sessions in a cache; when a client invokes the <i>release</i> operation of a session, it need only mark that the session is unused rather than perform a heap deallocation. If a server object does not need to store any information about its clients, it can implement the AbstractSession interface itself, perhaps using private inheritance, in this case, the <i>release</i> operation would do nothing.
+    + Use of the heap. Allocating and deallocating memory from the heap is an expensive operation. Forcing clients to discard sessions via the <i>release</i> method in the AbstractSession interface, rather than an explicit deallocation of the session object, gives server objects more flexibility in the allocation of session objecs. For instance, if the server allocated the session from the heap, the <i>release</i> operation would delete the session object. 
+
+    + However, a server might preallocate sessions in a cache; when a client invokes the <i>release</i> operation of a session, it need only mark that the session is unused rather than perform a heap deallocation. If a server object does not need to store any information about its clients, it can implement the AbstractSession interface itself, perhaps using private inheritance, in this case, the <i>release</i> operation would do nothing.
 
     + Object finalization. In a language with automatic garbage collection and object finalization, the act of releasing a session can be made synonymous with releasing the last reference to the Session object. The functionality of releasing a session can be performed by the finalization method of the Session object and so will be called automatically by the garbage collector.
 
@@ -118,7 +121,9 @@
 
 #Session Facade Pattern
 
-        + Enterprise beans encapsulate business logic and business data and expose their interfaces, and thus the complexity of the distributed services, to the client tier.
+        + Enterprise beans encapsulate business logic and business data and expose their interfaces. 
+
+        + Thus the complexity of the distributed services, to the client tier.
 
 ##Problem
         + In a multitiered Java 2 Platform, Enterprise Edition (J2EE) application environment, the following problems arise:
@@ -142,7 +147,7 @@
 
         + A problem also arises when a client interacts directly with the business objects. Since the business objects are directly exposed to the clients, there is no unified strategy for accessing the business objects. Without such a uniform client access strategy, the business objects are exposed to clients and may reduce consistent usage.
 
-    ## forces 
+##Forces 
 
     1. Provide a simpler interface to the clients by hiding all the complex interactions between business components.
 
