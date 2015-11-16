@@ -173,16 +173,16 @@
 
 ##Participants
 
-    <b>Client<\b>
+    1. Client
         + This represents the client of the Session Facade, which needs access to the business service. This client can be another session bean (Session Facade) in the same business tier or a business delegate in another tier.
 
-    <b>SessionFacade</b>
+    2. SessionFacade
         + The SessionFacade is implemented as a session bean. The SessionFacade manages the relationships between numerous BusinessObjects and provides a higher level abstraction to the client. The SessionFacade offers coarse-grained access to the participating BusinessObject represented by the Invoke invocation to the session bean.
 
-    <b>BusinessObject</b>
+    3. BusinessObject
         + The BusinessObject is a role object that facilitates applying different strategies, such as session beans entity beans. A BusinessObject provides data and/or some service in the class diagram. The SessionFacade interacts with multiple BusinessObject instances to provide the service.
 
-    <b>Strategies</b>
+    4. Strategies
         + The Session Facade is a business-tier controller object that controls the interactions between the client and the participant business data and business service objects. In a complex application, there may be numerous Session Facades that can intermediate between the client and these objects. You can identify where a Session Facade might be useful by studying the client requirements and interactions typically documented in use cases and scenarios. This analysis enables you to identify a controller layer-composed of Session Facades-that can act as facades for these scenarios.
 
 ##Implementation Strategies
