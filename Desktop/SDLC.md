@@ -14,7 +14,12 @@
     + Similar to waterfall, you only move on to the next step when the previous step has been completed. 
     + The product is verified at each stage, and cannot move forward until it has been completely verified at a stage
 
-##Requirement Analysis
+##Left Hand Side
+
+    + Think about the V-shape of the diagram that the SDLC derives its name from
+    + The following activities are what are traditional in waterfall, but they have a corresponding right hand side test
+
+<h3>Requirement Analysis</h3>
 
     + The requirement analysis is the first stage in the V Model
     + The function is decided. Requirements are collected and the needs of the user are analyzed.
@@ -22,12 +27,31 @@
     + Users are interviewed and requirements document is generated
     
 
-##System Design
+<h3>System Design</h3>
     
     + Engineers analyze and understand the business of the proposed system by studying the user requirements document.
     + The Engineers devise the possibilites by which the user requirements can be implemented
     + User is informed in this state if any of the requirements are infeasible. The user document is then edited accordingly
     + After this, the software specification document for the development phase is generated. 
     + The software specification document contains how the general system is organized, menu structures, data structures, etc. 
+
+<h3>Architecture Design</h3>
+
+    + Choose the architecture where the work will be done.
+    + Carry out the integration testing design 
+
+<h3>Module Design</h3> 
+
+    + The system is broken up into smaller units or modules.
+    + Each module is explained to the programmer so that coding can begin directly. 
+    + A low level design document is generated. It contains details of the functional logic of the module, the psuedocode for the following:
+        1. database tabels
+        2. Interface details with complete API references
+        3. Dependency Issues
+        4. Error message listings
+        5. Input and outputs for module
+    + The unit test design is developed
+
+## Right Hand Side
 
 
