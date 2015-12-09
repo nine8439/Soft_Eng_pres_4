@@ -92,9 +92,19 @@
         3. When an application is in the testing phase, it is difficult to go back and change the functionality
         4. Working software isn't produced until later in the life cycle    
 
-#Big Bang Model
+#Big Bang Model(See image, http://api.ning.com/files/mOFzWoNURnZRK4gEqahd8QhfqrhX9iujdj0KKscxHWE0FPRPVNvZ01WObcYwCIV-d*JvTMsTAv5si-kA7BajcygDwVKBTECX/big_bang_model.bmp)
 
 ##Intro
+
+    + Similar to the theory explaining the origin of the universe, the model requires huge amounts of money, people, and energy
+    + Combining the these inputs, they work and then the output is a software product
+    + There is no planning, scheduling, or formal development process.
+    + Most of the effort is done developing software and writing the code
+    + This model is used usually when there is a single developer, because he can perform the analysis and write the code
+    + There is no designated testing phase 
+    + This is the most popular model for students who program in introduction classes
+
+###Pros and Cons
     
 
 
