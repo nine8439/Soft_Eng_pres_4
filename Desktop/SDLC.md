@@ -106,6 +106,16 @@
 
 ###Pros and Cons
     
+    + Pros
+        1. No defined process
+        2. Easy to manage
+        3. Good way for students new to programming to start
+
+    + Cons
+        1. No defined process
+        2. Doesn't scale well for complex projects
+        3. Can be costly if requirements are misunderstood
+    
 
 
 
