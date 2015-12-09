@@ -1,4 +1,4 @@
-#V-Model (See Image in repo, credit: http://softobiz.com/wp-content/uploads/2012/03/v-model.png)
+#V-Model (See Image, credit: http://softobiz.com/wp-content/uploads/2012/03/v-model.png)
 
 ##Intro
     + Response to perceived weakness found in the waterfall model
@@ -78,5 +78,24 @@
     + Test Plans are composed by business users.
     + User acceptance test is performed in a user environment that is similar to the production environment, using realistic data
     + The test verifies that delivered system meets user's requirement and system is ready for use in real time.
+
+<h3>Benefits and Shortcomings of V Model</h3>
+
+    + Pros
+        1. The process is highly disciplined, only one phase is worked on at a time
+        2. Easy to work with for smaller projects where requirements are easily understood
+        3. The process is easy to manage because it is because it is rigid, an there are specific deliverables for each phase
+
+    + Cons
+        1. The model doesn't work well for large projects are projects that are object-oriented intensive
+        2. The model doesn't work well for projects where requirements are at a decent risk of changing during work
+        3. When an application is in the testing phase, it is difficult to go back and change the functionality
+        4. Working software isn't produced until later in the life cycle    
+
+#Big Bang Model
+
+##Intro
+    
+
 
 
