@@ -115,6 +115,19 @@
         1. No defined process
         2. Doesn't scale well for complex projects
         3. Can be costly if requirements are misunderstood
+
+
+#References 
+    + https://lameguy.wordpress.com/2013/05/29/the-big-bang-software-development-lifecycle-model/
+    + http://www.roberthalf.com/technology/blog/6-basic-sdlc-methodologies-the-pros-and-cons
+    + http://istqbexamcertification.com/what-is-v-model-advantages-disadvantages-and-when-to-use-it/
+    + http://www.clarotesting.com/page11.htm
+
+
+#To Learn More
+
+    + https://www.youtube.com/watch?v=j6rxyRwEdVU
+    + https://www.youtube.com/watch?v=H59PBt1xKrE
     
 
 
