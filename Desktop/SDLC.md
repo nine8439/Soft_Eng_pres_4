@@ -54,4 +54,29 @@
 
 ## Right Hand Side
 
+    + The right hand side refers to the tests for the corresponding left hand activity
+
+<h3>Unit Testing</h3> 
+    + Unit Test Plans (UTPs) are developed during module design phase
+    + UTPs executed to eliminate bugs at code level or unit level 
+    + Unit: smallest entity which can independently exist
+    + Unit testing verifies that the smallest entity can function correctly when isolated from the rest of the codes/units.
+    
+<h3>Integration Testing</h3>
+    + Tests verify that units created and tested independently can coexist and communicate among themselves
+    + Test results are shared with customer's team
+
+<h3>System Testing</h3> 
+    + System Tests Plans are developed during system design phase.
+    + Contrary to unit and integration test plans, system test plans are composed by client's business team.
+    + System Test ensures that expectations from application developed are met. 
+    + The whole application is tested for its functionality, interdependency and communication
+    + System Testing verifies that functional and non-functional requirements have been met
+    + Load and performance testing, stress testing, regression testing, etc., are subsets of system testing
+
+<h3>User acceptance testing</h3>
+    + Test Plans are composed by business users.
+    + User acceptance test is performed in a user environment that is similar to the production environment, using realistic data
+    + The test verifies that delivered system meets user's requirement and system is ready for use in real time.
+
 
